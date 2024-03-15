@@ -2,9 +2,9 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "About my project!",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "I am Rui Wen, a Y2 Psychology student. I am passionate about nature and wildlife conservation! Recently, a Jungle Fowl collided into the window of the multi-purpose hall of my RC, causing its death. The datasets I provide are thus on bird-window collisions which are often fatal. I hope to raise awareness on this issue to reduce the loss of innocent bird lives.\n\nknitr::include_graphics(\"hornbill.jpg\")"
   },
   {
     "objectID": "index.html",
