@@ -2,10 +2,11 @@
 title: "Rui Wen's Website"
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+this is my data set
 
 ```{r}
-1 + 1
+library(readr)
+cleveland <- read.csv("Cleveland_collision_data.csv")
+cleveland
+
 ```

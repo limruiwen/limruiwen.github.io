@@ -1,9 +1,9 @@
 ---
-title: "About"
+title: "About my project!" ---
 ---
 
-About this site
+I am Rui Wen, a Y2 Psychology student. I am passionate about nature and wildlife conservation! Recently, a Jungle Fowl collided into the window of the multi-purpose hall of my RC, causing its death. The datasets I provide are thus on bird-window collisions which are often fatal. I hope to raise awareness on this issue to reduce the loss of innocent bird lives.
 
 ```{r}
-1 + 1
+knitr::include_graphics("hornbill.jpg")
 ```
