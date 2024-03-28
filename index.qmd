@@ -7,6 +7,9 @@ this is my data set
 ```{r}
 library(readr)
 cleveland <- read.csv("Cleveland_collision_data.csv")
-cleveland
 
+```
+
+```{=html}
+<iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp/"> </iframe>
 ```
