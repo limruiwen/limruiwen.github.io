@@ -2,7 +2,7 @@
 title: "About my project!"
 ---
 
-# I am Rui Wen, a Y2 Psychology student. I am passionate about nature and wildlife conservation! Recently, a Jungle Fowl collided into the window of the multi-purpose hall of my RC, causing its death. The datasets I provide are thus on bird-window collisions which are often fatal. I hope to raise awareness on this issue to reduce the loss of innocent bird lives.
+# I am Rui Wen, a Y2 Psychology student. I am passionate about nature and wildlife conservation! Recently, a Jungle Fowl collided into the window of the multi-purpose hall of my RC, causing its death. The datasets I provide are thus on bird-window collisions in Chicago and Cleveland as well as data from the Herpetological Society of Singapore. Their data consists of reports from citizens on reptile roadkill they find. Through analysing these datasets, I hope to raise awareness on the negative impacts of urbanisation on wildlife and conservation. 
 
 ```{r}
 knitr::include_graphics("hornbill.jpg")

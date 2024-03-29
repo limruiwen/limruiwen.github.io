@@ -5,7 +5,7 @@ account: ruiwenlim
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 11611905
-bundleId: 8429577
+bundleId: 8432288
 url: https://ruiwenlim.shinyapps.io/MyShinyApp/
 version: 1
 asMultiple: FALSE

@@ -4,14 +4,14 @@
     "href": "about.html",
     "title": "About my project!",
     "section": "",
-    "text": "I am Rui Wen, a Y2 Psychology student. I am passionate about nature and wildlife conservation! Recently, a Jungle Fowl collided into the window of the multi-purpose hall of my RC, causing its death. The datasets I provide are thus on bird-window collisions which are often fatal. I hope to raise awareness on this issue to reduce the loss of innocent bird lives.\n\nknitr::include_graphics(\"hornbill.jpg\")"
+    "text": "I am Rui Wen, a Y2 Psychology student. I am passionate about nature and wildlife conservation! Recently, a Jungle Fowl collided into the window of the multi-purpose hall of my RC, causing its death. The datasets I provide are thus on bird-window collisions in Chicago and Cleveland as well as data from the Herpetological Society of Singapore. Their data consists of reports from citizens on reptile roadkill they find. Through analysing these datasets, I hope to raise awareness on the negative impacts of urbanisation on wildlife and conservation.\n\nknitr::include_graphics(\"hornbill.jpg\")"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Rui Wen’s Website",
     "section": "",
-    "text": "this is my data set\n\nlibrary(readr)\ncleveland &lt;- read.csv(\"Cleveland_collision_data.csv\")"
+    "text": "this is my data set\n\nlibrary(readr)\ncleveland &lt;- read.csv(\"Cleveland_collision_data.csv\")\nchicago &lt;- read.csv(\"Chicago_collision_data.csv\")\nlightlevels &lt;- read.csv(\"Light_levels_dryad.csv\")\nhss &lt;- read.csv(\"/Users/limruiwen/Desktop/NM2207/limruiwen.github.io/personalapp/Project_RunOver.csv\")"
   },
   {
     "objectID": "Project-Week8.html",
