@@ -1,0 +1,20 @@
+---
+title: "Rui Wen's Website"
+---
+
+this is my data set
+
+```{r}
+library(readr)
+cleveland <- read.csv("Cleveland_collision_data.csv")
+chicago <- read.csv("Chicago_collision_data.csv")
+lightlevels <- read.csv("Light_levels_dryad.csv")
+hss <- read.csv("/Users/limruiwen/Desktop/NM2207/limruiwen.github.io/personalapp/Project_RunOver.csv")
+```
+
+```{=html}
+<iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp/"> </iframe>
+```
+
+
+
