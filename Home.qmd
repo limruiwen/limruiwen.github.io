@@ -34,7 +34,3 @@ plot
 
 From the data above, it is clear that these reptiles are at the mercy of our roads. The number of roadkill each year is likely to increase as Singapore continues to develop. While it would be impossible to remove cars from the roads, what we can do is drive slowly, especially around nature parks. As seen in the interactive map, roadkill hotspots are around nature parks. By driving slowly and cautiously in these areas, we prevent the loss of innocent wildlife! 
 
-```{r}
-knitr::include_graphics("roadkill.jpg")
-```
-
