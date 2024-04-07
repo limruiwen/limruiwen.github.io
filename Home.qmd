@@ -1,0 +1,15 @@
+---
+title: "Home"
+---
+
+My name is Rui Wen and I am very passionate about wildlife and conservation!
+
+Due to urbanisation, much of Singapore's forests have been deforested. Only 0.28% of Singapore's landmass is occupied by orignal, undeforested forests (Yee et al., 2011). This means that many wildlife lose their habitats, forcing them to adapt to our urban landscape. This has led to an increase in wildlife roadkill as these animals lose forest connectivity and have to use our roads instead.
+
+Using data from the Herpetological Society of Singapore's (HSS) Project Runover, I aim to raise awareness on how wildlife, more specifically reptiles, have lost their lives to vehicle collisions.
+
+This interactive map allows you to see the locations where reptile roadkill have been spotted. Using the slider on the left, you can select the year(s). The blue circles on the map represent the location of the reptile roadkill. Can you spot any reptile roadkill hotspots?
+
+```{=html}
+<iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp/"> </iframe>
+```
