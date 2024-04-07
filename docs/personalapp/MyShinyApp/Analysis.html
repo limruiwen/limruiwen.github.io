@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>limruiwen.github.io - Home</title>
+<title>limruiwen.github.io - Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,14 +99,20 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#i-am-rui-wen-a-y2-psychology-student.-i-am-passionate-about-nature-and-wildlife-conservation-recently-a-jungle-fowl-collided-into-the-window-of-the-multi-purpose-hall-of-my-rc-causing-its-death.-the-datasets-i-provide-are-thus-on-bird-window-collisions-in-chicago-and-cleveland-as-well-as-data-from-the-herpetological-society-of-singapore.-their-data-consists-of-reports-from-citizens-on-reptile-roadkill-they-find.-through-analysing-these-datasets-i-hope-to-raise-awareness-on-the-negative-impacts-of-urbanisation-on-wildlife-and-conservation." id="toc-i-am-rui-wen-a-y2-psychology-student.-i-am-passionate-about-nature-and-wildlife-conservation-recently-a-jungle-fowl-collided-into-the-window-of-the-multi-purpose-hall-of-my-rc-causing-its-death.-the-datasets-i-provide-are-thus-on-bird-window-collisions-in-chicago-and-cleveland-as-well-as-data-from-the-herpetological-society-of-singapore.-their-data-consists-of-reports-from-citizens-on-reptile-roadkill-they-find.-through-analysing-these-datasets-i-hope-to-raise-awareness-on-the-negative-impacts-of-urbanisation-on-wildlife-and-conservation." class="nav-link active" data-scroll-target="#i-am-rui-wen-a-y2-psychology-student.-i-am-passionate-about-nature-and-wildlife-conservation-recently-a-jungle-fowl-collided-into-the-window-of-the-multi-purpose-hall-of-my-rc-causing-its-death.-the-datasets-i-provide-are-thus-on-bird-window-collisions-in-chicago-and-cleveland-as-well-as-data-from-the-herpetological-society-of-singapore.-their-data-consists-of-reports-from-citizens-on-reptile-roadkill-they-find.-through-analysing-these-datasets-i-hope-to-raise-awareness-on-the-negative-impacts-of-urbanisation-on-wildlife-and-conservation.">I am Rui Wen, a Y2 Psychology student. I am passionate about nature and wildlife conservation! Recently, a Jungle Fowl collided into the window of the multi-purpose hall of my RC, causing its death. The datasets I provide are thus on bird-window collisions in Chicago and Cleveland as well as data from the Herpetological Society of Singapore. Their data consists of reports from citizens on reptile roadkill they find. Through analysing these datasets, I hope to raise awareness on the negative impacts of urbanisation on wildlife and conservation.</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Home</h1>
+<h1 class="title">Analysis</h1>
 </div>
 
 
@@ -121,61 +127,11 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>My name is Rui Wen and I am very passionate about wildlife and conservation!</p>
-<p>Due to urbanisation, much of Singapore’s forests have been deforested. Only 0.28% of Singapore’s landmass is occupied by orignal, undeforested forests (Yee et al., 2011). This means that many wildlife lose their habitats, forcing them to adapt to our urban landscape. This has led to an increase in wildlife roadkill as these animals lose forest connectivity and have to use our roads instead.</p>
-<p>Using data from the Herpetological Society of Singapore’s (HSS) Project Runover, I aim to raise awareness on how wildlife, more specifically reptiles, have lost their lives to vehicle collisions. The dataset contains the date, type of animal killed, species, location (langitude and longitude) and path type the roadkill was found on.</p>
-<p>This interactive map allows you to see the locations where reptile roadkill have been spotted. Using the slider on the left, you can select the year(s). The blue circles on the map represent the location of the reptile roadkill. Can you spot any reptile roadkill hotspots?</p>
-<iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp/"> </iframe>
-<p>Zooming in, let’s observe the type of reptile most vulnerable to becoming roadkill. According to HSS’ data, snakes are the reptile most reported. This could be because they are so low to the ground, making it difficult for drivers to spot the snakes.</p>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.4.4     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.0
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: 1 failed to parse.</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  Which.of.the.following.groups.best.describes.the.roadkill.found.   n
-1                                                        Caecilian   1
-2                                                             Frog 104
-3                                                  Lizard - Agamid  26
-4                                                   Lizard - Gecko   4
-5                                                 Lizard - Monitor  87
-6                                                Lizard - Not Sure  12
-7                                                   Lizard - Skink   8
-8                                                            Snake 453
-9                                                           Turtle  21</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 9 × 2
-  Which.of.the.following.groups.best.describes.the.roadkill.found.     n
-  &lt;chr&gt;                                                            &lt;int&gt;
-1 Caecilian                                                            1
-2 Frog                                                               104
-3 Lizard - Agamid                                                     26
-4 Lizard - Gecko                                                       4
-5 Lizard - Monitor                                                    87
-6 Lizard - Not Sure                                                   12
-7 Lizard - Skink                                                       8
-8 Snake                                                              453
-9 Turtle                                                              21</code></pre>
-</div>
-<div class="cell-output-display">
-<p><img src="Home_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<p>From the data above, it is clear that these reptiles are at the mercy of our roads. The number of roadkill each year is likely to increase as Singapore continues to develop.</p>
+<section id="i-am-rui-wen-a-y2-psychology-student.-i-am-passionate-about-nature-and-wildlife-conservation-recently-a-jungle-fowl-collided-into-the-window-of-the-multi-purpose-hall-of-my-rc-causing-its-death.-the-datasets-i-provide-are-thus-on-bird-window-collisions-in-chicago-and-cleveland-as-well-as-data-from-the-herpetological-society-of-singapore.-their-data-consists-of-reports-from-citizens-on-reptile-roadkill-they-find.-through-analysing-these-datasets-i-hope-to-raise-awareness-on-the-negative-impacts-of-urbanisation-on-wildlife-and-conservation." class="level1">
+<h1>I am Rui Wen, a Y2 Psychology student. I am passionate about nature and wildlife conservation! Recently, a Jungle Fowl collided into the window of the multi-purpose hall of my RC, causing its death. The datasets I provide are thus on bird-window collisions in Chicago and Cleveland as well as data from the Herpetological Society of Singapore. Their data consists of reports from citizens on reptile roadkill they find. Through analysing these datasets, I hope to raise awareness on the negative impacts of urbanisation on wildlife and conservation.</h1>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
