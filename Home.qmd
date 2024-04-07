@@ -13,6 +13,7 @@ This interactive map allows you to see the locations where reptile roadkill have
 ```{=html}
 <iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp/"> </iframe>
 ```
+
 Zooming in, let's observe the type of reptile most vulnerable to becoming roadkill. According to HSS' data, snakes are the reptile most reported. This could be because they are so low to the ground, making it difficult for drivers to spot the snakes.
 
 ```{r echo=FALSE}
@@ -31,4 +32,4 @@ Which.of.the.following.groups.best.describes.the.roadkill.found., y = n)) + geom
 plot
 ```
 
-From the data above, it is clear that these reptiles are at the mercy of our roads. The number of roadkill each year is likely to increase as Singapore continues to develop.
+From the data above, it is clear that these reptiles are at the mercy of our roads. The number of roadkill each year is likely to increase as Singapore continues to develop. While it would be impossible to remove cars from the roads, what we can do is drive slowly, especially around nature parks. As seen in the interactive map, roadkill hotspots are around nature parks. By driving slowly and cautiously in these areas, we prevent the loss of innocent wildlife! 
