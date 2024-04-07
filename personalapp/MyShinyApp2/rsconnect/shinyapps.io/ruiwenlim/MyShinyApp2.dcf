@@ -1,0 +1,12 @@
+name: MyShinyApp2
+title: MyShinyApp2
+username: ruiwenlim
+account: ruiwenlim
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11688808
+bundleId: 8464058
+url: https://ruiwenlim.shinyapps.io/MyShinyApp2/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

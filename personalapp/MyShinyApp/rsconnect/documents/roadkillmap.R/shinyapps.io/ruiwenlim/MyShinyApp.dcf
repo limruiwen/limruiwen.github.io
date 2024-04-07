@@ -1,0 +1,13 @@
+name: MyShinyApp
+title: MyShinyApp
+username: ruiwenlim
+account: ruiwenlim
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11611905
+bundleId: 8464063
+url: https://ruiwenlim.shinyapps.io/MyShinyApp/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: Chicago_collision_data.csv|Cleveland_collision_data.csv

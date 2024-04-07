@@ -33,5 +33,19 @@
     "title": "Project-Week8",
     "section": "Including Plots",
     "text": "Including Plots\nYou can also embed plots, for example:\n\n\n\n\n\nNote that the echo = FALSE parameter was added to the code chunk to prevent printing of the R code that generated the plot.\n#(1) What is the topic that you have finalized?"
+  },
+  {
+    "objectID": "personalapp/Home.html",
+    "href": "personalapp/Home.html",
+    "title": "Home",
+    "section": "",
+    "text": "My name is Rui Wen and I am very passionate about wildlife and conservation!\nDue to urbanisation, much of Singapore’s forests have been deforested. Only 0.28% of Singapore’s landmass is occupied by orignal, undeforested forests (Yee et al., 2011). This means that many wildlife lose their habitats, forcing them to adapt to our urban landscape. This has led to an increase in wildlife roadkill as these animals lose forest connectivity and have to use our roads instead.\nUsing data from the Herpetological Society of Singapore’s (HSS) Project Runover, I aim to raise awareness on how wildlife, more specifically reptiles, have lost their lives to vehicle collisions.\nThis interactive map allows you to see the locations where reptile roadkill have been spotted. Using the slider on the left, you can select the year(s). The blue circles on the map represent the location of the reptile roadkill. Can you spot any reptile roadkill hotspots?\n \nNext, you can select the type of reptile and see how many of that reptile have been innocently killed on the roads by year."
+  },
+  {
+    "objectID": "personalapp/MyShinyApp/Analysis.html",
+    "href": "personalapp/MyShinyApp/Analysis.html",
+    "title": "Analysis",
+    "section": "",
+    "text": "I am Rui Wen, a Y2 Psychology student. I am passionate about nature and wildlife conservation! Recently, a Jungle Fowl collided into the window of the multi-purpose hall of my RC, causing its death. The datasets I provide are thus on bird-window collisions in Chicago and Cleveland as well as data from the Herpetological Society of Singapore. Their data consists of reports from citizens on reptile roadkill they find. Through analysing these datasets, I hope to raise awareness on the negative impacts of urbanisation on wildlife and conservation."
   }
 ]
