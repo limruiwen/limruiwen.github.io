@@ -1,20 +1,38 @@
 library(shiny)
-
-# Define UI for application that draws a histogram
-ui <- fluidPage(
-  sidebarLayout(
-    sidebarPanel(sliderInput("samplesize","Sample Size:",min = 100,max = 10000,value = 1000)),
-    mainPanel(plotOutput("distPlot"))
+hss <- read.csv("Project_RunOver.csv")
+fluidPage(    
+  titlePanel("Type of Reptile Roadkill"),
+  
+  # Generate a row with a sidebar
+  sidebarLayout(      
+    
+    # Define the sidebar with one input
+    sidebarPanel(
+      selectInput("reptile", "Reptile:", 
+                  choices = hss$Which.of.the.following.groups.best.describes.the.roadkill.found.),
+      hr(),
+      helpText("Data from Herpetological Society of Singapore")
+    ),
+    
+    # Create a spot for the barplot
+    mainPanel(
+      plotOutput("barplot")  
+    )
+    
   )
 )
 
-# Define server logic required to draw a histogram
-server <- function(input, output) {
-  output$distPlot <- renderPlot({
-    hist(rnorm(input$samplesize),col='darkorchid',xlab="Sample",main="Standard Normally Distributed Sample")},
-    height=300
-  )
+function(input, output) {
+  
+  # Fill in the spot we created for a plot
+  output$barplot <- renderPlot({
+    
+    # Render a barplot
+    barplot(hss[,input$reptile]*1000, 
+            main=input$reptile,
+            ylab="Number of Roadkill",
+            xlab="Year")
+  })
 }
 
-# Run the application 
 shinyApp(ui = ui, server = server)
