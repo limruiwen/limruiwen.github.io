@@ -82,11 +82,13 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.qmd" rel="" target="">
+    <a class="nav-link active" href="./Home.html" rel="" target="" aria-current="page">
  <span class="menu-text">Home</span></a>
   </li>  
-  <li class="dropdown-header">
- <span class="menu-text">about.qmd</span></li>
+  <li class="nav-item">
+    <a class="nav-link" href="./Analysis.html" rel="" target="">
+ <span class="menu-text">Analysis</span></a>
+  </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
 </div>
@@ -128,49 +130,8 @@ ul.task-list li input[type="checkbox"] {
 <iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp/"> </iframe>
 <p>Zooming in, let’s observe the type of reptile most vulnerable to becoming roadkill. According to HSS’ data, snakes are the reptile most reported. This could be because they are so low to the ground, making it difficult for drivers to spot the snakes.</p>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.4.4     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.0
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: 1 failed to parse.</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  Which.of.the.following.groups.best.describes.the.roadkill.found.   n
-1                                                        Caecilian   1
-2                                                             Frog 104
-3                                                  Lizard - Agamid  26
-4                                                   Lizard - Gecko   4
-5                                                 Lizard - Monitor  87
-6                                                Lizard - Not Sure  12
-7                                                   Lizard - Skink   8
-8                                                            Snake 453
-9                                                           Turtle  21</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 9 × 2
-  Which.of.the.following.groups.best.describes.the.roadkill.found.     n
-  &lt;chr&gt;                                                            &lt;int&gt;
-1 Caecilian                                                            1
-2 Frog                                                               104
-3 Lizard - Agamid                                                     26
-4 Lizard - Gecko                                                       4
-5 Lizard - Monitor                                                    87
-6 Lizard - Not Sure                                                   12
-7 Lizard - Skink                                                       8
-8 Snake                                                              453
-9 Turtle                                                              21</code></pre>
-</div>
 <div class="cell-output-display">
-<p><img src="Home_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+<p><img src="Home_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>From the data above, it is clear that these reptiles are at the mercy of our roads. The number of roadkill each year is likely to increase as Singapore continues to develop. While it would be impossible to remove cars from the roads, what we can do is drive slowly, especially around nature parks. As seen in the interactive map, roadkill hotspots are around nature parks. By driving slowly and cautiously in these areas, we prevent the loss of innocent wildlife!</p>

@@ -5,9 +5,8 @@ account: ruiwenlim
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 11611905
-bundleId: 8464085
+bundleId: 8471507
 url: https://ruiwenlim.shinyapps.io/MyShinyApp/
 version: 1
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: Chicago_collision_data.csv|Cleveland_collision_data.csv|Light_levels_dryad.csv

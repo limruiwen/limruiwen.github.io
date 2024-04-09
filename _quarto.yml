@@ -6,9 +6,9 @@ website:
   title: "limruiwen.github.io"
   navbar:
     left:
-      - href: index.qmd
+      - href: Home.qmd
         text: Home
-      - about.qmd
+      - Analysis.qmd
 
 format:
   html:

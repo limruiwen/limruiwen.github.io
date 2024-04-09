@@ -1,6 +1,23 @@
 library(shiny)
-hss <- read.csv("Project_RunOver.csv")
-fluidPage(    
+library(tidyverse)
+hss <- read.csv("Project_RunOver.csv") %>% na.omit()
+
+#extracting year
+temp <- str_split(hss$Date.of.Encounter, "/", simplify = T)
+temp[,3] <- ifelse(str_length(temp[,3]) == 2, paste0("20", temp[,3]), temp[,3])
+hss$Date.of.Encounter <- ymd(paste0(temp[,3], "-", temp[,1], "-", temp[,2]))
+hss$year_val <- year(hss$Date.of.Encounter)
+
+temp <- str_split(hss$Google.Maps.Plus.Codes, ",")
+hss$lat <- as.numeric(sapply(temp, function(x) x[1]))
+hss$long <- as.numeric(sapply(temp, function(x) x[2]))
+
+hss <- hss %>% 
+  rename(animal = Which.of.the.following.groups.best.describes.the.roadkill.found.,
+         species = If.you.are.able.to.provide.a.more.specific.ID..please.do.so.here.,
+         )
+
+ui <- fluidPage(    
   titlePanel("Type of Reptile Roadkill"),
   
   # Generate a row with a sidebar
@@ -8,8 +25,7 @@ fluidPage(
     
     # Define the sidebar with one input
     sidebarPanel(
-      selectInput("reptile", "Reptile:", 
-                  choices = hss$Which.of.the.following.groups.best.describes.the.roadkill.found.),
+      selectInput("reptile", "Reptile:", hss$animal, selected = T),
       hr(),
       helpText("Data from Herpetological Society of Singapore")
     ),
@@ -22,16 +38,20 @@ fluidPage(
   )
 )
 
-function(input, output) {
+server <- function(input, output) {
   
   # Fill in the spot we created for a plot
   output$barplot <- renderPlot({
     
     # Render a barplot
-    barplot(hss[,input$reptile]*1000, 
-            main=input$reptile,
-            ylab="Number of Roadkill",
-            xlab="Year")
+    hss %>% filter(animal == input$reptile) %>%
+      mutate(year_val = as.factor(year_val)) %>%
+      group_by(year_val) %>%
+      count() %>%
+      ggplot() +
+      geom_col(aes(x = year_val, y = n, fill = year_val)) +
+      theme_bw() +
+      scale_fill_viridis_d()
   })
 }
 
