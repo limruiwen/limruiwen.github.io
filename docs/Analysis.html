@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -82,11 +116,13 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.qmd" rel="" target="">
+    <a class="nav-link" href="./Home.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
-  <li class="dropdown-header">
- <span class="menu-text">about.qmd</span></li>
+  <li class="nav-item">
+    <a class="nav-link active" href="./Analysis.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Analysis</span></a>
+  </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
 </div>
@@ -99,7 +135,36 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#analysis-of-project-runover-data" id="toc-analysis-of-project-runover-data" class="nav-link active" data-scroll-target="#analysis-of-project-runover-data">Analysis of Project Runover Data</a>
+  <ul class="collapse">
+  <li><a href="#temporal-analysis" id="toc-temporal-analysis" class="nav-link" data-scroll-target="#temporal-analysis">Temporal Analysis</a>
+  <ul class="collapse">
+  <li><a href="#to-see-how-roadkill-numbers-have-changed-over-the-years-we-can-take-a-look-at-this-line-plot" id="toc-to-see-how-roadkill-numbers-have-changed-over-the-years-we-can-take-a-look-at-this-line-plot" class="nav-link" data-scroll-target="#to-see-how-roadkill-numbers-have-changed-over-the-years-we-can-take-a-look-at-this-line-plot">To see how roadkill numbers have changed over the years, we can take a look at this line plot:</a></li>
+  <li><a href="#temporal-analysis-i-excluded-2024-because-data-collection-is-still-ongoing-and-since-year-hasnt-ended-appears-to-be-a-dip-in-roadkills." id="toc-temporal-analysis-i-excluded-2024-because-data-collection-is-still-ongoing-and-since-year-hasnt-ended-appears-to-be-a-dip-in-roadkills." class="nav-link" data-scroll-target="#temporal-analysis-i-excluded-2024-because-data-collection-is-still-ongoing-and-since-year-hasnt-ended-appears-to-be-a-dip-in-roadkills.">Temporal analysis, i excluded 2024 because data collection is still ongoing and since year hasnt ended, appears to be a dip in roadkills.</a></li>
+  </ul></li>
+  <li><a href="#species-analysis" id="toc-species-analysis" class="nav-link" data-scroll-target="#species-analysis">Species Analysis</a>
+  <ul class="collapse">
+  <li><a href="#zooming-in-lets-observe-the-type-of-reptile-most-vulnerable-to-becoming-roadkill." id="toc-zooming-in-lets-observe-the-type-of-reptile-most-vulnerable-to-becoming-roadkill." class="nav-link" data-scroll-target="#zooming-in-lets-observe-the-type-of-reptile-most-vulnerable-to-becoming-roadkill.">Zooming in, let’s observe the type of reptile most vulnerable to becoming roadkill.</a></li>
+  <li><a href="#you-can-take-a-closer-look-at-the-exact-number-of-roadkill-of-each-reptile-for-each-year." id="toc-you-can-take-a-closer-look-at-the-exact-number-of-roadkill-of-each-reptile-for-each-year." class="nav-link" data-scroll-target="#you-can-take-a-closer-look-at-the-exact-number-of-roadkill-of-each-reptile-for-each-year.">You can take a closer look at the exact number of roadkill of each reptile for each year.</a></li>
+  </ul></li>
+  <li><a href="#spatial-analysis" id="toc-spatial-analysis" class="nav-link" data-scroll-target="#spatial-analysis">Spatial Analysis</a>
+  <ul class="collapse">
+  <li><a href="#this-interactive-map-allows-you-to-see-the-locations-where-reptile-roadkill-have-been-spotted.-using-the-slider-on-the-left-you-can-select-the-years.-the-blue-circles-on-the-map-represent-the-location-of-the-reptile-roadkill.-can-you-spot-any-reptile-roadkill-hotspots" id="toc-this-interactive-map-allows-you-to-see-the-locations-where-reptile-roadkill-have-been-spotted.-using-the-slider-on-the-left-you-can-select-the-years.-the-blue-circles-on-the-map-represent-the-location-of-the-reptile-roadkill.-can-you-spot-any-reptile-roadkill-hotspots" class="nav-link" data-scroll-target="#this-interactive-map-allows-you-to-see-the-locations-where-reptile-roadkill-have-been-spotted.-using-the-slider-on-the-left-you-can-select-the-years.-the-blue-circles-on-the-map-represent-the-location-of-the-reptile-roadkill.-can-you-spot-any-reptile-roadkill-hotspots">This interactive map allows you to see the locations where reptile roadkill have been spotted. Using the slider on the left, you can select the year(s). The blue circles on the map represent the location of the reptile roadkill. Can you spot any reptile roadkill hotspots?</a></li>
+  </ul></li>
+  <li><a href="#analysis-of-map" id="toc-analysis-of-map" class="nav-link" data-scroll-target="#analysis-of-map">Analysis of map</a></li>
+  <li><a href="#correlation-analysis" id="toc-correlation-analysis" class="nav-link" data-scroll-target="#correlation-analysis">Correlation Analysis</a>
+  <ul class="collapse">
+  <li><a href="#next-i-want-to-examine-the-correlation-between-the-type-of-road-and-roadkill-numbers" id="toc-next-i-want-to-examine-the-correlation-between-the-type-of-road-and-roadkill-numbers" class="nav-link" data-scroll-target="#next-i-want-to-examine-the-correlation-between-the-type-of-road-and-roadkill-numbers">Next, I want to examine the correlation between the type of road and roadkill numbers</a></li>
+  <li><a href="#path-type-correlation-analysis" id="toc-path-type-correlation-analysis" class="nav-link" data-scroll-target="#path-type-correlation-analysis">Path type correlation analysis</a></li>
+  </ul></li>
+  <li><a href="#lastly-using-an-interactive-heatmap-i-hope-to-explore-the-correlation-between-month-and-species-to-see-if-weather-plays-a-role-in-roadkill-numbers." id="toc-lastly-using-an-interactive-heatmap-i-hope-to-explore-the-correlation-between-month-and-species-to-see-if-weather-plays-a-role-in-roadkill-numbers." class="nav-link" data-scroll-target="#lastly-using-an-interactive-heatmap-i-hope-to-explore-the-correlation-between-month-and-species-to-see-if-weather-plays-a-role-in-roadkill-numbers.">Lastly, using an interactive heatmap, I hope to explore the correlation between month and species to see if weather plays a role in roadkill numbers.</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -121,9 +186,104 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>I am Rui Wen, a Y2 Psychology student. I am passionate about nature and wildlife conservation! Recently, a Jungle Fowl collided into the window of the multi-purpose hall of my RC, causing its death. The datasets I provide are thus on bird-window collisions in Chicago and Cleveland as well as data from the Herpetological Society of Singapore. Their data consists of reports from citizens on reptile roadkill they find. Through analysing these datasets, I hope to raise awareness on the negative impacts of urbanisation on wildlife and conservation.</p>
+<section id="analysis-of-project-runover-data" class="level1">
+<h1>Analysis of Project Runover Data</h1>
+<section id="temporal-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="temporal-analysis">Temporal Analysis</h2>
+<section id="to-see-how-roadkill-numbers-have-changed-over-the-years-we-can-take-a-look-at-this-line-plot" class="level3">
+<h3 class="anchored" data-anchor-id="to-see-how-roadkill-numbers-have-changed-over-the-years-we-can-take-a-look-at-this-line-plot">To see how roadkill numbers have changed over the years, we can take a look at this line plot:</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="Analysis_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="temporal-analysis-i-excluded-2024-because-data-collection-is-still-ongoing-and-since-year-hasnt-ended-appears-to-be-a-dip-in-roadkills." class="level3">
+<h3 class="anchored" data-anchor-id="temporal-analysis-i-excluded-2024-because-data-collection-is-still-ongoing-and-since-year-hasnt-ended-appears-to-be-a-dip-in-roadkills.">Temporal analysis, i excluded 2024 because data collection is still ongoing and since year hasnt ended, appears to be a dip in roadkills.</h3>
+</section>
+</section>
+<section id="species-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="species-analysis">Species Analysis</h2>
+<section id="zooming-in-lets-observe-the-type-of-reptile-most-vulnerable-to-becoming-roadkill." class="level3">
+<h3 class="anchored" data-anchor-id="zooming-in-lets-observe-the-type-of-reptile-most-vulnerable-to-becoming-roadkill.">Zooming in, let’s observe the type of reptile most vulnerable to becoming roadkill.</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="Analysis_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="you-can-take-a-closer-look-at-the-exact-number-of-roadkill-of-each-reptile-for-each-year." class="level3">
+<h3 class="anchored" data-anchor-id="you-can-take-a-closer-look-at-the-exact-number-of-roadkill-of-each-reptile-for-each-year.">You can take a closer look at the exact number of roadkill of each reptile for each year.</h3>
+<iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp2/"> </iframe>
+</section>
+</section>
+<section id="spatial-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-analysis">Spatial Analysis</h2>
+<section id="this-interactive-map-allows-you-to-see-the-locations-where-reptile-roadkill-have-been-spotted.-using-the-slider-on-the-left-you-can-select-the-years.-the-blue-circles-on-the-map-represent-the-location-of-the-reptile-roadkill.-can-you-spot-any-reptile-roadkill-hotspots" class="level3">
+<h3 class="anchored" data-anchor-id="this-interactive-map-allows-you-to-see-the-locations-where-reptile-roadkill-have-been-spotted.-using-the-slider-on-the-left-you-can-select-the-years.-the-blue-circles-on-the-map-represent-the-location-of-the-reptile-roadkill.-can-you-spot-any-reptile-roadkill-hotspots">This interactive map allows you to see the locations where reptile roadkill have been spotted. Using the slider on the left, you can select the year(s). The blue circles on the map represent the location of the reptile roadkill. Can you spot any reptile roadkill hotspots?</h3>
+<iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp/"> </iframe>
+</section>
+</section>
+<section id="analysis-of-map" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-of-map">Analysis of map</h2>
+</section>
+<section id="correlation-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="correlation-analysis">Correlation Analysis</h2>
+<section id="next-i-want-to-examine-the-correlation-between-the-type-of-road-and-roadkill-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="next-i-want-to-examine-the-correlation-between-the-type-of-road-and-roadkill-numbers">Next, I want to examine the correlation between the type of road and roadkill numbers</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aggregate data by type of path</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>path_counts <span class="ot">&lt;-</span> hss <span class="sc">%&gt;%</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(How.would.you.classify.the.path.this.roadkill.was.found.on.) <span class="sc">%&gt;%</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Count))  <span class="co"># Optional: arrange in descending order of count</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a bar chart</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>path_counts <span class="sc">%&gt;%</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> Count, <span class="at">n =</span> <span class="dv">8</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(How.would.you.classify.the.path.this.roadkill.was.found.on. <span class="sc">!=</span> <span class="st">""</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">How.would.you.classify.the.path.this.roadkill.was.found.on. =</span> <span class="fu">reorder</span>(How.would.you.classify.the.path.this.roadkill.was.found.on., <span class="sc">-</span>Count)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> How.would.you.classify.the.path.this.roadkill.was.found.on., <span class="at">y =</span> Count, <span class="at">fill =</span> How.would.you.classify.the.path.this.roadkill.was.found.on.)) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span>  <span class="co"># Use identity to use Count values as heights</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Roadkill Incidents by Type of Path"</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Type of Path"</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Number of Incidents"</span>) <span class="sc">+</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span>  <span class="co"># Rotate x labels for better</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Analysis_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="path-type-correlation-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="path-type-correlation-analysis">Path type correlation analysis</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>hss <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">month =</span> <span class="fu">month</span>(Date.of.Encounter)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Which.of.the.following.groups.best.describes.the.roadkill.found., month) <span class="sc">%&gt;%</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> Which.of.the.following.groups.best.describes.the.roadkill.found., <span class="at">fill =</span> n)) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>() <span class="sc">+</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Month"</span>, <span class="at">y =</span> <span class="st">"Species"</span>, <span class="at">fill =</span> <span class="st">"Count"</span>) <span class="sc">+</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">"blue"</span>, <span class="at">high =</span> <span class="st">"red"</span>, <span class="at">mid =</span> <span class="st">"white"</span>, <span class="at">midpoint =</span> <span class="dv">25</span>) <span class="sc">+</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">labels =</span> month.abb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 rows containing missing values (`geom_tile()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="Analysis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="lastly-using-an-interactive-heatmap-i-hope-to-explore-the-correlation-between-month-and-species-to-see-if-weather-plays-a-role-in-roadkill-numbers." class="level2">
+<h2 class="anchored" data-anchor-id="lastly-using-an-interactive-heatmap-i-hope-to-explore-the-correlation-between-month-and-species-to-see-if-weather-plays-a-role-in-roadkill-numbers.">Lastly, using an interactive heatmap, I hope to explore the correlation between month and species to see if weather plays a role in roadkill numbers.</h2>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

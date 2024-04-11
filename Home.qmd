@@ -2,38 +2,16 @@
 title: "Home"
 ---
 
-My name is Rui Wen and I am very passionate about wildlife and conservation!
+# How Has Urbanisation Affected Wildlife?
 
-Due to urbanisation, much of Singapore's forests have been deforested. Only 0.28% of Singapore's landmass is occupied by orignal, undeforested forests (Yee et al., 2011). This means that many wildlife lose their habitats, forcing them to adapt to our urban landscape. This has led to an increase in wildlife roadkill as these animals lose forest connectivity and have to use our roads instead.
+### My name is Rui Wen and I am very passionate about wildlife and conservation!
 
-Using data from the Herpetological Society of Singapore's (HSS) Project Runover, I aim to raise awareness on how wildlife, more specifically reptiles, have lost their lives to vehicle collisions. The dataset contains the date, type of animal killed, species, location (langitude and longitude) and path type the roadkill was found on.
+### Due to urbanisation, much of Singapore's forests have been deforested. Only 0.28% of Singapore's landmass is occupied by orignal, undeforested forests (Yee et al., 2011). This means that many wildlife lose their habitats, forcing them to adapt to our urban landscape. This has led to an increase in wildlife roadkill as these animals lose forest connectivity and have to use our roads instead.
 
-This interactive map allows you to see the locations where reptile roadkill have been spotted. Using the slider on the left, you can select the year(s). The blue circles on the map represent the location of the reptile roadkill. Can you spot any reptile roadkill hotspots?
+### Using data from the Herpetological Society of Singapore's (HSS) Project Runover, I aim to raise awareness on how wildlife, more specifically reptiles, have lost their lives to vehicle collisions. The dataset contains the date, type of animal killed, species, coordinates of where the roadkill was found and path type the roadkill was found on. Project RunOver is based on citizen science. Citizen Scientists are encouraged to send in sightings of reptile roadkill, regardless of vehicle type. Project Runover uses data from 2011 to the present day.
 
-```{=html}
-<iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp/"> </iframe>
-```
+### In my data cleaning process, I removed empty rows to ensure accuracy. In addition, in the original dataset, some of the locations were not coordinates, but street names. To aid the crafting of data visualisations, I converted these street names into coordinates.
 
-Zooming in, let's observe the type of reptile most vulnerable to becoming roadkill. According to HSS' data, snakes are the reptile most reported. This could be because they are so low to the ground, making it difficult for drivers to spot the snakes.
+### Such data is important as it helps us understand the impacts urbanisation has on wildlife and the mitigation measures we can take. Some of these species may even be endangered, and Project Runover is one of the ways we can ensure the survival of more precious willdife species!
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-library(tidyverse)
-library(ggplot2)
-```
-
-```{r echo=FALSE, warning=FALSE}
-hss <- read.csv("Project_RunOver.csv") %>% na.omit()
-temp <- str_split(hss$Date.of.Encounter, "/", simplify = T)
-temp[,3] <- ifelse(str_length(temp[,3]) == 2, paste0("20", temp[,3]), temp[,3])
-hss$Date.of.Encounter <- ymd(paste0(temp[,3], "-", temp[,1], "-", temp[,2]))
-hss$year_val <- year(hss$Date.of.Encounter)
-
-df <- group_by(hss %>% count(Which.of.the.following.groups.best.describes.the.roadkill.found.))
-
-plot <- ggplot(df, aes(x = 
-Which.of.the.following.groups.best.describes.the.roadkill.found., y = n)) + geom_bar(stat = "identity") + labs(title = "Number of Each Reptile Roadkill by Reptile Type ", x = "Reptile Type", y = "Number of Reptile Roadkill") + theme(axis.text.x = element_text(angle = 45, hjust = 1))
-plot
-```
-
-From the data above, it is clear that these reptiles are at the mercy of our roads. The number of roadkill each year is likely to increase as Singapore continues to develop. While it would be impossible to remove cars from the roads, what we can do is drive slowly, especially around nature parks. As seen in the interactive map, roadkill hotspots are around nature parks. By driving slowly and cautiously in these areas, we prevent the loss of innocent wildlife! 
-
+### I would like to thank Mr Kannan Raja, Head of the Herpetological Society of Singapore, for giving me access to this dataset.

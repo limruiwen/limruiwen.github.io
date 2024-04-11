@@ -1,5 +1,111 @@
 ---
 title: "Analysis"
 ---
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+hss <- read.csv("Project_RunOver.csv") %>% na.omit()
+temp <- str_split(hss$Date.of.Encounter, "/", simplify = T)
+temp[,3] <- ifelse(str_length(temp[,3]) == 2, paste0("20", temp[,3]), temp[,3])
+hss$Date.of.Encounter <- ymd(paste0(temp[,3], "-", temp[,1], "-", temp[,2]))
+hss$year_val <- year(hss$Date.of.Encounter)
 
-I am Rui Wen, a Y2 Psychology student. I am passionate about nature and wildlife conservation! The dataset I provide are from the Herpetological Society of Singapore. Their data consists of reports from citizens on reptile roadkill they find. Through analysing this dataset, I hope to raise awareness on the negative impacts of urbanisation on wildlife and conservation.
+df <- group_by(hss %>% count(Which.of.the.following.groups.best.describes.the.roadkill.found.))
+```
+
+# Analysis of Project Runover Data
+
+## Temporal Analysis
+
+### To see how roadkill numbers have changed over the years, we can take a look at this line plot: 
+
+```{r, echo=FALSE}
+yearly_counts <- hss %>% na.omit("hss") %>% filter(year_val != 2024) %>%
+  group_by(year_val) %>%
+  summarise(Count = n())
+
+# Plotting the data
+ggplot(yearly_counts, aes(x = year_val, y = Count)) +
+  geom_line(group=1, color="blue") +
+  geom_point(color="red") +
+  scale_x_continuous(breaks = yearly_counts$year_val, labels = yearly_counts$year_val) + # Set x-axis breaks and labels
+  labs(title="Yearly Roadkill Incidents", x="Year", y="Count") +
+  theme_minimal()
+
+```
+
+### Temporal analysis, i excluded 2024 because data collection is still ongoing and since year hasnt ended, appears to be a dip in roadkills. 
+
+## Species Analysis
+
+### Zooming in, let's observe the type of reptile most vulnerable to becoming roadkill. 
+
+```{r echo=FALSE, warning=FALSE}
+plot <- ggplot(df, aes(x = 
+Which.of.the.following.groups.best.describes.the.roadkill.found., y = n, fill = Which.of.the.following.groups.best.describes.the.roadkill.found.)) + geom_bar(stat = "identity") + labs(title = "Number of Each Reptile Roadkill by Reptile Type ", x = "Reptile Type", y = "Number of Reptile Roadkill") + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + scale_fill_viridis_d() +
+  guides(fill = "none")
+plot
+```
+
+### You can take a closer look at the exact number of roadkill of each reptile for each year.
+
+```{=html}
+<iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp2/"> </iframe>
+```
+
+## Spatial Analysis
+
+### This interactive map allows you to see the locations where reptile roadkill have been spotted. Using the slider on the left, you can select the year(s). The blue circles on the map represent the location of the reptile roadkill. Can you spot any reptile roadkill hotspots?
+
+```{=html}
+<iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp/"> </iframe>
+```
+
+## Analysis of map
+
+## Correlation Analysis
+
+### Next, I want to examine the correlation between the type of road and roadkill numbers
+
+```{r}
+# Aggregate data by type of path
+path_counts <- hss %>%
+  group_by(How.would.you.classify.the.path.this.roadkill.was.found.on.) %>%
+  summarise(Count = n()) %>%
+  arrange(desc(Count))  # Optional: arrange in descending order of count
+# Creating a bar chart
+path_counts %>%
+  slice_max(order_by = Count, n = 8) %>%
+  filter(How.would.you.classify.the.path.this.roadkill.was.found.on. != "") %>%
+  mutate(How.would.you.classify.the.path.this.roadkill.was.found.on. = reorder(How.would.you.classify.the.path.this.roadkill.was.found.on., -Count)) %>%
+  ggplot(aes(x = How.would.you.classify.the.path.this.roadkill.was.found.on., y = Count, fill = How.would.you.classify.the.path.this.roadkill.was.found.on.)) +
+  geom_bar(stat = "identity", color = "black") +  # Use identity to use Count values as heights
+  labs(title = "Roadkill Incidents by Type of Path",
+       x = "Type of Path",
+       y = "Number of Incidents") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +  # Rotate x labels for better
+  guides(fill = "none") +
+  scale_fill_viridis_d()
+
+```
+
+### Path type correlation analysis
+
+```{r}
+hss %>%
+  mutate(month = month(Date.of.Encounter)) %>%
+  group_by(Which.of.the.following.groups.best.describes.the.roadkill.found., month) %>%
+  count() %>%
+  ggplot(aes(x = month, y = Which.of.the.following.groups.best.describes.the.roadkill.found., fill = n)) +
+  geom_tile() +
+  labs(x = "Month", y = "Species", fill = "Count") +
+  scale_fill_gradient2(low = "blue", high = "red", mid = "white", midpoint = 25) +
+  theme_bw() +
+  scale_x_continuous(breaks = 1:12, labels = month.abb)
+```
+
+## Lastly, using an interactive heatmap, I hope to explore the correlation between month and species to see if weather plays a role in roadkill numbers. 
+
+
