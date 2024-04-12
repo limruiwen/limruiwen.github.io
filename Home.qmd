@@ -1,17 +1,29 @@
 ---
-title: "Home"
+title: "How Has Urbanisation Affected Wildlife?"
 ---
 
-# How Has Urbanisation Affected Wildlife?
+<p> My name is Rui Wen and I am very passionate about wildlife and conservation! My favourite animals are snakes and I love exploring nature and getting to see wildlife! </p>
 
-### My name is Rui Wen and I am very passionate about wildlife and conservation!
+```{r, echo= FALSE}
+knitr::include_graphics("introimg.jpg")
+```
+<p><small> This is a picture of me in Kaeng Krachan, Thailand, observing some birds. </small></p>
 
-### Due to urbanisation, much of Singapore's forests have been deforested. Only 0.28% of Singapore's landmass is occupied by orignal, undeforested forests (Yee et al., 2011). This means that many wildlife lose their habitats, forcing them to adapt to our urban landscape. This has led to an increase in wildlife roadkill as these animals lose forest connectivity and have to use our roads instead.
+<p>Due to urbanisation, much of Singapore's forests have been deforested. Only 0.28% of Singapore's landmass is occupied by orignal, undeforested forests (Yee et al., 2011). This means that many wildlife lose their habitats, forcing them to adapt to our urban landscape. This has led to an increase in wildlife roadkill as these animals lose forest connectivity and have to use our roads instead.</p>
 
-### Using data from the Herpetological Society of Singapore's (HSS) Project Runover, I aim to raise awareness on how wildlife, more specifically reptiles, have lost their lives to vehicle collisions. The dataset contains the date, type of animal killed, species, coordinates of where the roadkill was found and path type the roadkill was found on. Project RunOver is based on citizen science. Citizen Scientists are encouraged to send in sightings of reptile roadkill, regardless of vehicle type. Project Runover uses data from 2011 to the present day.
+<p> Using data from the Herpetological Society of Singapore's (HSS) Project Runover, I aim to raise awareness on how wildlife, more specifically reptiles, have lost their lives to vehicle collisions. The dataset contains the date, type of animal killed, species, coordinates of where the roadkill was found and path type the roadkill was found on. Project RunOver is based on citizen science. Citizen Scientists are encouraged to send in sightings of reptile roadkill, regardless of vehicle type. Project Runover uses data from 2011 to the present day. </p>
 
-### In my data cleaning process, I removed empty rows to ensure accuracy. In addition, in the original dataset, some of the locations were not coordinates, but street names. To aid the crafting of data visualisations, I converted these street names into coordinates.
+```{r, echo= FALSE}
+knitr::include_graphics("kukri.jpg")
+```
+<p><small> Kukri Snake Roadkill I spotted in Khao Yai, Thailand. Although not visible, it sustained a head injury. </small></p>
 
-### Such data is important as it helps us understand the impacts urbanisation has on wildlife and the mitigation measures we can take. Some of these species may even be endangered, and Project Runover is one of the ways we can ensure the survival of more precious willdife species!
+<p> In my data cleaning process, I removed empty rows to ensure accuracy. In addition, in the original dataset, some of the locations were not coordinates, but street names. To aid the crafting of data visualisations, I converted these street names into coordinates. </p>
 
-### I would like to thank Mr Kannan Raja, Head of the Herpetological Society of Singapore, for giving me access to this dataset.
+<p> Such data is important as it helps us understand the impacts urbanisation has on wildlife and the mitigation measures we can take. Some of these species may even be endangered, and Project Runover is one of the ways we can ensure the survival of more precious wildife species! </p>
+
+<p> I would like to thank Mr Kannan Raja, Head of the Herpetological Society of Singapore, for giving me access to this dataset. If you would like to learn more about HSS, check out their website here! </p>
+
+```{=html}
+<iframe width="800" height="550" src="https://herpsocsg.com/" title="Herpetological Society of Singapore Instagram"></iframe>
+```

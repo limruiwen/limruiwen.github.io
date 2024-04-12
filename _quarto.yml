@@ -12,9 +12,11 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme: litera
     css: styles.css
     toc: true
+    include-css: /Users/limruiwen/Desktop/NM2207/limruiwen.github.io
+
 
 editor: visual
 

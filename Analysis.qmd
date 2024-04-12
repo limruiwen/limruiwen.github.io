@@ -1,5 +1,5 @@
 ---
-title: "Analysis"
+title: "Analysis of Project Runover Data"
 ---
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
@@ -14,11 +14,9 @@ hss$year_val <- year(hss$Date.of.Encounter)
 df <- group_by(hss %>% count(Which.of.the.following.groups.best.describes.the.roadkill.found.))
 ```
 
-# Analysis of Project Runover Data
+# Temporal Analysis
 
-## Temporal Analysis
-
-### To see how roadkill numbers have changed over the years, we can take a look at this line plot: 
+## To see how roadkill numbers have changed over the years, we can take a look at this line plot: 
 
 ```{r, echo=FALSE}
 yearly_counts <- hss %>% na.omit("hss") %>% filter(year_val != 2024) %>%
@@ -35,11 +33,11 @@ ggplot(yearly_counts, aes(x = year_val, y = Count)) +
 
 ```
 
-### Temporal analysis, i excluded 2024 because data collection is still ongoing and since year hasnt ended, appears to be a dip in roadkills. 
+<p> Temporal analysis, i excluded 2024 because data collection is still ongoing and since year hasnt ended, appears to be a dip in roadkills. </p>
 
-## Species Analysis
+# Species Analysis
 
-### Zooming in, let's observe the type of reptile most vulnerable to becoming roadkill. 
+## Zooming in, let's observe the type of reptile most vulnerable to becoming roadkill. 
 
 ```{r echo=FALSE, warning=FALSE}
 plot <- ggplot(df, aes(x = 
@@ -48,27 +46,27 @@ Which.of.the.following.groups.best.describes.the.roadkill.found., y = n, fill = 
 plot
 ```
 
-### You can take a closer look at the exact number of roadkill of each reptile for each year.
+<p> You can take a closer look at the exact number of roadkill of each reptile for each year. </p>
 
 ```{=html}
 <iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp2/"> </iframe>
 ```
 
-## Spatial Analysis
+# Spatial Analysis
 
-### This interactive map allows you to see the locations where reptile roadkill have been spotted. Using the slider on the left, you can select the year(s). The blue circles on the map represent the location of the reptile roadkill. Can you spot any reptile roadkill hotspots?
+## This interactive map allows you to see the locations where reptile roadkill have been spotted. Using the slider on the left, you can select the year(s). The blue circles on the map represent the location of the reptile roadkill. Can you spot any reptile roadkill hotspots?
 
 ```{=html}
 <iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp/"> </iframe>
 ```
 
-## Analysis of map
+<p> Analysis of map </p>
 
-## Correlation Analysis
+# Correlation Analysis
 
-### Next, I want to examine the correlation between the type of road and roadkill numbers
+## Next, I want to examine the correlation between the type of road and roadkill numbers
 
-```{r}
+```{r, echo=FALSE}
 # Aggregate data by type of path
 path_counts <- hss %>%
   group_by(How.would.you.classify.the.path.this.roadkill.was.found.on.) %>%
@@ -91,9 +89,11 @@ path_counts %>%
 
 ```
 
-### Path type correlation analysis
+# Path type correlation analysis
 
-```{r}
+## Lastly, using an interactive heatmap, I hope to explore the correlation between month and species to see if weather plays a role in roadkill numbers. 
+
+```{r, echo=FALSE}
 hss %>%
   mutate(month = month(Date.of.Encounter)) %>%
   group_by(Which.of.the.following.groups.best.describes.the.roadkill.found., month) %>%
@@ -105,7 +105,5 @@ hss %>%
   theme_bw() +
   scale_x_continuous(breaks = 1:12, labels = month.abb)
 ```
-
-## Lastly, using an interactive heatmap, I hope to explore the correlation between month and species to see if weather plays a role in roadkill numbers. 
 
 
