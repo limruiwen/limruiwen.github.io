@@ -60,14 +60,14 @@
     "href": "Home.html",
     "title": "How Has Urbanisation Affected Wildlife?",
     "section": "",
-    "text": "My name is Rui Wen and I am very passionate about wildlife and conservation! My favourite animals are snakes and I love exploring nature and getting to see wildlife!\n\n\n\n\n\n\n\n This is a picture of me in Kaeng Krachan, Thailand, observing some birds. \n\n\nDue to urbanisation, much of Singapore’s forests have been deforested. Only 0.28% of Singapore’s landmass is occupied by orignal, undeforested forests (Yee et al., 2011). This means that many wildlife lose their habitats, forcing them to adapt to our urban landscape. This has led to an increase in wildlife roadkill as these animals lose forest connectivity and have to use our roads instead.\n\n\nUsing data from the Herpetological Society of Singapore’s (HSS) Project Runover, I aim to raise awareness on how wildlife, more specifically reptiles, have lost their lives to vehicle collisions. The dataset contains the date, type of animal killed, species, coordinates of where the roadkill was found and path type the roadkill was found on. Project RunOver is based on citizen science. Citizen Scientists are encouraged to send in sightings of reptile roadkill, regardless of vehicle type. Project Runover uses data from 2011 to the present day.\n\n\n\n\n\n\n\n Kukri Snake Roadkill I spotted in Khao Yai, Thailand. Although not visible, it sustained a head injury. \n\n\nIn my data cleaning process, I removed empty rows to ensure accuracy. In addition, in the original dataset, some of the locations were not coordinates, but street names. To aid the crafting of data visualisations, I converted these street names into coordinates.\n\n\nSuch data is important as it helps us understand the impacts urbanisation has on wildlife and the mitigation measures we can take. Some of these species may even be endangered, and Project Runover is one of the ways we can ensure the survival of more precious wildife species!\n\n\nI would like to thank Mr Kannan Raja, Head of the Herpetological Society of Singapore, for giving me access to this dataset. If you would like to learn more about HSS, check out their website here!"
+    "text": "My name is Rui Wen and I am very passionate about wildlife and conservation! My favourite animals are snakes and I love exploring nature and getting to see wildlife!\n\n\nThe inspiration for this project came from two sources. The first source was from the Kukri Snake roadkill I saw in Kaeng Krachan, Thailand. I knelt by the roadside as it took it last breath, head injured by a vehicle collision.\n\n\n\n\n\n\n\n Kukri Snake Roadkill. \n\n\nMy next source of inspiration came from attending the Death By Man Exhibition by Jasvic Lye. The artist photographed the carcasses of different wildlife that died due to human causes. The exhibition humanises these wildlife through narratives and visuals to raise awareness on the adverse impacts of urbanisation on wildlife.\n\n\nLearn more about Death by Man here!\n\n\n\nMy project thus aims to bring to light the adverse impacts urbanisation has had on wildlife through examining data from the Herpetological Society of Singapore’s Project Runover."
   },
   {
     "objectID": "Analysis.html",
     "href": "Analysis.html",
     "title": "Analysis of Project Runover Data",
     "section": "",
-    "text": "Temporal analysis, i excluded 2024 because data collection is still ongoing and since year hasnt ended, appears to be a dip in roadkills."
+    "text": "Temporal Analysis\n\nTo see how roadkill numbers have changed over the years, take a look at this line plot:\n\n\n\n\n\n\nAs seen in the graph, the number of reptile roadkill has increased exponentially from 2011 to 2023. This shows us that wildlife roadkill is a legitimate and pressing concern.\n\n\nThe low records from 2011 to 2020 is because HSS had not officially launched Project Runover yet. Project Runover was only launched in 2020 which explains the sharp increase from 2020 to 2021.\n\n\nHowever, as the project gained traction in 2021, the number of yearly roadkill accidents has steadily increased, emphasising the need for mitigation measures to prevent numbers from climbing.\n\n\nFor this graph, I did not include the year 2024 as data for this year is still being collected and accurate data is not available yet.\n\n\n\n\nSpecies Analysis\n\nLet’s zoom in to see which types of reptiles are the most affected by roadkill:\n\n\n\n\n\n\nAs seen in the bar plot, snakes are the most affected by roadkill, followed by frogs and monitor lizards. Reptiles are vulnerable to vehicle collisions because they often crawl onto roads to regulate their body temperature. The high occurrence of snake roadkill could be due to stigma against snakes, motivating drivers to run over them.\n\n\n\nInterested to know how roadkill incidents have affected the different reptiles each year? Choose a reptile you’re interested to learn more about!\n \n\n\n\nSpatial Analysis\n\nThis interactive map allows you to see the locations where reptile roadkill have been spotted. Using the slider on the left, you can select the year(s). The blue circles on the map represent the location of the reptile roadkill. Can you spot any reptile roadkill hotspots?\n \n\nIronically, but not surprisingly, some reptile roadkill hotspots are roads near nature reserves and parks. Nature reserves and sparks are rich habitats for biodiversity. Due the disruption of forest connectivity to build these roads, wildlife often use roads to move from one place to another. When driving in these areas, drive slowly and keep a lookout for any wildlife!\n\n\n\nNow that we know some reptile roadkill hotspots, we can see what type of paths these incidents usually occur on.\n\n\n\n\n\n\n\nAs seen by the graph, a very large majority of reptile roadkill are found on roads.\n\n\n\nMonth Analysis\n\nLooking at the time of year may also paint a picture on the factors affecting reptile roadkill.\n\n\n\n\n\n\nAs seen from the heat map, the month with the highest snake roadkill was from May to June. This period is usually the hottest month in Singapore. As such, there may be increased instances of snakes seeking shade beyond forested areas. Other factors such as mating season may affect the number of reptile roadkill found that month.\n\n\nThrough exploring this data, I hope more people are cognisant of the negative impacts urbanisation has had on wildlife. To take action, you can start by contributing to Project Runover if you see any roadkill, driving slowly and staying alert especially at areas near nature reserves, and feedback to governmental institutions about mitigation measures!\n\n\n TOGETHER, WE CAN STOP REPTILE ROADKILL!"
   },
   {
     "objectID": "Analysis.html#temporal-analysis",
@@ -151,7 +151,7 @@
     "href": "Analysis.html#to-see-how-roadkill-numbers-have-changed-over-the-years-we-can-take-a-look-at-this-line-plot",
     "title": "Analysis of Project Runover Data",
     "section": "",
-    "text": "Temporal analysis, i excluded 2024 because data collection is still ongoing and since year hasnt ended, appears to be a dip in roadkills."
+    "text": "As seen in the graph, the number of reptile roadkill has increased exponentially from 2011 to 2023. This shows us that wildlife roadkill is a legitimate and pressing concern.\n\n\nThe low records from 2011 to 2020 is because HSS had not officially launched Project Runover yet. Project Runover was only launched in 2020 which explains the sharp increase from 2020 to 2021.\n\n\nHowever, as the project gained traction in 2021, the number of yearly roadkill accidents has steadily increased, emphasising the need for mitigation measures to prevent numbers from climbing.\n\n\nFor this graph, I did not include the year 2024 as data for this year is still being collected and accurate data is not available yet."
   },
   {
     "objectID": "Analysis.html#zooming-in-lets-observe-the-type-of-reptile-most-vulnerable-to-becoming-roadkill.",
@@ -165,7 +165,7 @@
     "href": "Analysis.html#this-interactive-map-allows-you-to-see-the-locations-where-reptile-roadkill-have-been-spotted.-using-the-slider-on-the-left-you-can-select-the-years.-the-blue-circles-on-the-map-represent-the-location-of-the-reptile-roadkill.-can-you-spot-any-reptile-roadkill-hotspots",
     "title": "Analysis of Project Runover Data",
     "section": "This interactive map allows you to see the locations where reptile roadkill have been spotted. Using the slider on the left, you can select the year(s). The blue circles on the map represent the location of the reptile roadkill. Can you spot any reptile roadkill hotspots?",
-    "text": "This interactive map allows you to see the locations where reptile roadkill have been spotted. Using the slider on the left, you can select the year(s). The blue circles on the map represent the location of the reptile roadkill. Can you spot any reptile roadkill hotspots?\n \n\nAnalysis of map"
+    "text": "This interactive map allows you to see the locations where reptile roadkill have been spotted. Using the slider on the left, you can select the year(s). The blue circles on the map represent the location of the reptile roadkill. Can you spot any reptile roadkill hotspots?\n \n\nIronically, but not surprisingly, some reptile roadkill hotspots are roads near nature reserves and parks. Nature reserves and sparks are rich habitats for biodiversity. Due the disruption of forest connectivity to build these roads, wildlife often use roads to move from one place to another. When driving in these areas, drive slowly and keep a lookout for any wildlife!"
   },
   {
     "objectID": "Analysis.html#next-i-want-to-examine-the-correlation-between-the-type-of-road-and-roadkill-numbers",
@@ -173,5 +173,68 @@
     "title": "Analysis of Project Runover Data",
     "section": "Next, I want to examine the correlation between the type of road and roadkill numbers",
     "text": "Next, I want to examine the correlation between the type of road and roadkill numbers"
+  },
+  {
+    "objectID": "Analysis.html#to-see-how-roadkill-numbers-have-changed-over-the-years-take-a-look-at-this-line-plot",
+    "href": "Analysis.html#to-see-how-roadkill-numbers-have-changed-over-the-years-take-a-look-at-this-line-plot",
+    "title": "Analysis of Project Runover Data",
+    "section": "",
+    "text": "As seen in the graph, the number of reptile roadkill has increased exponentially from 2011 to 2023. This shows us that wildlife roadkill is a legitimate and pressing concern.\n\n\nThe low records from 2011 to 2020 is because HSS had not officially launched Project Runover yet. Project Runover was only launched in 2020 which explains the sharp increase from 2020 to 2021.\n\n\nHowever, as the project gained traction in 2021, the number of yearly roadkill accidents has steadily increased, emphasising the need for mitigation measures to prevent numbers from climbing.\n\n\nFor this graph, I did not include the year 2024 as data for this year is still being collected and accurate data is not available yet."
+  },
+  {
+    "objectID": "Analysis.html#lets-zoom-in-to-see-which-types-of-reptiles-are-the-most-affected-by-roadkill",
+    "href": "Analysis.html#lets-zoom-in-to-see-which-types-of-reptiles-are-the-most-affected-by-roadkill",
+    "title": "Analysis of Project Runover Data",
+    "section": "Let’s zoom in to see which types of reptiles are the most affected by roadkill:",
+    "text": "Let’s zoom in to see which types of reptiles are the most affected by roadkill:\n\n\n\n\n\n\nAs seen in the bar plot, snakes are the most affected by roadkill, followed by frogs and monitor lizards. Reptiles are vulnerable to vehicle collisions because they often crawl onto roads to regulate their body temperature. The high occurrence of snake roadkill could be due to stigma against snakes, motivating drivers to run over them."
+  },
+  {
+    "objectID": "Analysis.html#interested-to-know-how-roadkill-incidents-have-affected-the-different-reptiles-each-year-choose-a-reptile-youre-interested-to-learn-more-about",
+    "href": "Analysis.html#interested-to-know-how-roadkill-incidents-have-affected-the-different-reptiles-each-year-choose-a-reptile-youre-interested-to-learn-more-about",
+    "title": "Analysis of Project Runover Data",
+    "section": "Interested to know how roadkill incidents have affected the different reptiles each year? Choose a reptile you’re interested to learn more about",
+    "text": "Interested to know how roadkill incidents have affected the different reptiles each year? Choose a reptile you’re interested to learn more about"
+  },
+  {
+    "objectID": "Analysis.html#now-that-we-know-some-reptile-roadkill-hotspots-we-can-see-what-type-of-paths-these-incidents-usually-occur-on.",
+    "href": "Analysis.html#now-that-we-know-some-reptile-roadkill-hotspots-we-can-see-what-type-of-paths-these-incidents-usually-occur-on.",
+    "title": "Analysis of Project Runover Data",
+    "section": "Now that we know some reptile roadkill hotspots, we can see what type of paths these incidents usually occur on.",
+    "text": "Now that we know some reptile roadkill hotspots, we can see what type of paths these incidents usually occur on."
+  },
+  {
+    "objectID": "Analysis.html#as-seen-by-the-graph-a-very-large-majority-of-reptile-roadkill-are-found-on-roads.",
+    "href": "Analysis.html#as-seen-by-the-graph-a-very-large-majority-of-reptile-roadkill-are-found-on-roads.",
+    "title": "Analysis of Project Runover Data",
+    "section": "As seen by the graph, a very large majority of reptile roadkill are found on roads.",
+    "text": "As seen by the graph, a very large majority of reptile roadkill are found on roads."
+  },
+  {
+    "objectID": "Analysis.html#looking-at-the-time-of-year-may-also-paint-a-picture-on-the-factors-affecting-reptile-roadkill.",
+    "href": "Analysis.html#looking-at-the-time-of-year-may-also-paint-a-picture-on-the-factors-affecting-reptile-roadkill.",
+    "title": "Analysis of Project Runover Data",
+    "section": "Looking at the time of year may also paint a picture on the factors affecting reptile roadkill.",
+    "text": "Looking at the time of year may also paint a picture on the factors affecting reptile roadkill.\n\n\n\n\n\n\nAs seen from the heat map, the month with the highest snake roadkill was from May to June. This period is usually the hottest month in Singapore. As such, there may be increased instances of snakes seeking shade beyond forested areas. Other factors such as mating season may affect the number of reptile roadkill found that month.\n\n\nlibrary(devtools)\n\nLoading required package: usethis\n\nlibrary(highcharter)\n\nRegistered S3 method overwritten by 'quantmod':\n  method            from\n  as.zoo.data.frame zoo \n\nlibrary(dplyr)\nlibrary(readr)\nlibrary(tidyverse)\n\nhc &lt;- hchart(df, \"Box and Whisker Diagram\", hcaes(y = df$n, group = df$Which.of.the.following.groups.best.describes.the.roadkill.found. ), color = \"#2980b9\") %&gt;%\n  hc_title(text = \"Distribution of Roadkill Counts by Type\") %&gt;%\n  hc_xAxis(title = list(text = \"Type of Roadkill\"), categories = df$Which.of.the.following.groups.best.describes.the.roadkill.found.) %&gt;%\n  hc_yAxis(title = list(text = \"Count of Roadkills\")) %&gt;%\n  hc_tooltip(pointFormat = \"&lt;b&gt;{point.y}&lt;/b&gt;\")\nhc"
+  },
+  {
+    "objectID": "PR.html",
+    "href": "PR.html",
+    "title": "Project Runover",
+    "section": "",
+    "text": "Due to urbanisation, much of Singapore’s forests have been deforested. Only 0.28% of Singapore’s landmass is occupied by orignal, undeforested forests (Yee et al., 2011). This means that many wildlife lose their habitats, forcing them to adapt to our urban landscape. This has led to an increase in wildlife roadkill as these animals lose forest connectivity and have to use our roads instead.\n\n\nUsing data from the Herpetological Society of Singapore’s (HSS) Project Runover, I aim to raise awareness on how wildlife, more specifically reptiles, have lost their lives to vehicle collisions. The dataset contains the date, type of animal killed, species, coordinates of where the roadkill was found and path type the roadkill was found on.\n\n\nProject RunOver is based on citizen science. Citizen Scientists are encouraged to send in sightings of reptile roadkill, regardless of vehicle type. Project Runover uses data from 2011 to the present day.\n\n\nIn my data cleaning process, I removed empty rows to ensure accuracy. In addition, in the original dataset, some of the locations were not coordinates, but street names. To aid the crafting of data visualisations, I converted these street names into coordinates.\n\n\nSuch data is important as it helps us understand the impacts urbanisation has on wildlife and the mitigation measures we can take. Some of these species may even be endangered, and Project Runover is one of the ways we can ensure the survival of more precious wildife species!\n\n\nI would like to thank Mr Kannan Raja, Head of the Herpetological Society of Singapore, for giving me access to this dataset. If you would like to learn more about HSS, check out their website here!"
+  },
+  {
+    "objectID": "PR.html#quarto",
+    "href": "PR.html#quarto",
+    "title": "Project Runover",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "PR.html#running-code",
+    "href": "PR.html#running-code",
+    "title": "Project Runover",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
   }
 ]

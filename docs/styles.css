@@ -1,4 +1,13 @@
 /* css styles */
 body {
-    background-color: #C5E1CD;
+    background-color: #F1FAF4;
+}
+
+.navbar {
+    background-color: #183923; 
+}
+
+/* General link selector */
+.navbar a {
+    color: white !important;
 }

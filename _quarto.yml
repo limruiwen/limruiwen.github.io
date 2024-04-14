@@ -3,12 +3,17 @@ project:
   output-dir: docs
 
 website:
-  title: "limruiwen.github.io"
+  title: "Rui Wen's Website"
   navbar:
     left:
       - href: Home.qmd
-        text: Home
-      - Analysis.qmd
+        text: "Home"
+      - href: PR.qmd
+        text: "Project Runover"
+      - href: Analysis.qmd
+        text: "Analysis"
+    
+        
 
 format:
   html:

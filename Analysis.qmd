@@ -16,7 +16,7 @@ df <- group_by(hss %>% count(Which.of.the.following.groups.best.describes.the.ro
 
 # Temporal Analysis
 
-## To see how roadkill numbers have changed over the years, we can take a look at this line plot: 
+#### To see how roadkill numbers have changed over the years, take a look at this line plot: 
 
 ```{r, echo=FALSE}
 yearly_counts <- hss %>% na.omit("hss") %>% filter(year_val != 2024) %>%
@@ -33,11 +33,17 @@ ggplot(yearly_counts, aes(x = year_val, y = Count)) +
 
 ```
 
-<p> Temporal analysis, i excluded 2024 because data collection is still ongoing and since year hasnt ended, appears to be a dip in roadkills. </p>
+<p> As seen in the graph, the number of reptile roadkill has increased exponentially from 2011 to 2023. This shows us that wildlife roadkill is a legitimate and pressing concern. </p>
+
+<p> The low records from 2011 to 2020 is because HSS had not officially launched Project Runover yet. Project Runover was only launched in 2020 which explains the sharp increase from 2020 to 2021. </p>
+
+<p> However, as the project gained traction in 2021, the number of yearly roadkill accidents has steadily increased, emphasising the need for mitigation measures to prevent numbers from climbing. </p>
+
+<p> For this graph, I did not include the year 2024 as data for this year is still being collected and accurate data is not available yet. </p>
 
 # Species Analysis
 
-## Zooming in, let's observe the type of reptile most vulnerable to becoming roadkill. 
+#### Let's zoom in to see which types of reptiles are the most affected by roadkill:
 
 ```{r echo=FALSE, warning=FALSE}
 plot <- ggplot(df, aes(x = 
@@ -46,7 +52,15 @@ Which.of.the.following.groups.best.describes.the.roadkill.found., y = n, fill = 
 plot
 ```
 
-<p> You can take a closer look at the exact number of roadkill of each reptile for each year. </p>
+<p> As seen in the bar plot, snakes are the most affected by roadkill, followed by frogs and monitor lizards. Reptiles are vulnerable to vehicle collisions because they often crawl onto roads to regulate their body temperature. The high occurrence of snake roadkill could be due to stigma against snakes, motivating drivers to run over them. </p>
+
+#### Interested to know how roadkill incidents have affected the different reptiles each year? Choose a reptile you're interested to learn more about!
+
+```{=html}
+<iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp2/"> </iframe>
+```
+
+### Curious about how some of these reptiles look like? Choose a species you'd like to see an image of!
 
 ```{=html}
 <iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp2/"> </iframe>
@@ -54,17 +68,15 @@ plot
 
 # Spatial Analysis
 
-## This interactive map allows you to see the locations where reptile roadkill have been spotted. Using the slider on the left, you can select the year(s). The blue circles on the map represent the location of the reptile roadkill. Can you spot any reptile roadkill hotspots?
+#### This interactive map allows you to see the locations where reptile roadkill have been spotted. Using the slider on the left, you can select the year(s). The blue circles on the map represent the location of the reptile roadkill. Can you spot any reptile roadkill hotspots?
 
 ```{=html}
 <iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp/"> </iframe>
 ```
 
-<p> Analysis of map </p>
+<p> Ironically, but not surprisingly, some reptile roadkill hotspots are roads near nature reserves and parks. Nature reserves and sparks are rich habitats for biodiversity. Due the disruption of forest connectivity to build these roads, wildlife often use roads to move from one place to another. When driving in these areas, drive slowly and keep a lookout for any wildlife! </p>
 
-# Correlation Analysis
-
-## Next, I want to examine the correlation between the type of road and roadkill numbers
+#### Now that we know some reptile roadkill hotspots, we can see what type of paths these incidents usually occur on.  
 
 ```{r, echo=FALSE}
 # Aggregate data by type of path
@@ -89,11 +101,13 @@ path_counts %>%
 
 ```
 
-# Path type correlation analysis
+#### As seen by the graph, a very large majority of reptile roadkill are found on roads.
 
-## Lastly, using an interactive heatmap, I hope to explore the correlation between month and species to see if weather plays a role in roadkill numbers. 
+# Month Analysis
 
-```{r, echo=FALSE}
+#### Looking at the time of year may also paint a picture on the factors affecting reptile roadkill. 
+
+```{r, echo=FALSE, warning=FALSE}
 hss %>%
   mutate(month = month(Date.of.Encounter)) %>%
   group_by(Which.of.the.following.groups.best.describes.the.roadkill.found., month) %>%
@@ -106,4 +120,9 @@ hss %>%
   scale_x_continuous(breaks = 1:12, labels = month.abb)
 ```
 
+<p> As seen from the heat map, the month with the highest snake roadkill was from May to June. This period is usually the hottest month in Singapore. As such, there may be increased instances of snakes seeking shade beyond forested areas. Other factors such as mating season may affect the number of reptile roadkill found that month. </p>
+
+<p> Through exploring this data, I hope more people are cognisant of the negative impacts urbanisation has had on wildlife. To take action, you can start by contributing to Project Runover if you see any roadkill, driving slowly and staying alert especially at areas near nature reserves, and feedback to governmental institutions about mitigation measures! </p>
+
+<p><strong> TOGETHER, WE CAN STOP REPTILE ROADKILL! </strong></p>
 
