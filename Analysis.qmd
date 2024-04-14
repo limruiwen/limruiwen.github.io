@@ -60,10 +60,10 @@ plot
 <iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp2/"> </iframe>
 ```
 
-### Curious about how some of these reptiles look like? Choose a species you'd like to see an image of!
+### Curious about how these reptiles look? Take a look at the first 5 reptiles recorded in Project Runover:
 
 ```{=html}
-<iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp2/"> </iframe>
+<iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp3/"> </iframe>
 ```
 
 # Spatial Analysis
