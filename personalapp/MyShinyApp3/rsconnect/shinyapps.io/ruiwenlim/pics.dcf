@@ -1,0 +1,12 @@
+name: pics
+title: pics
+username: ruiwenlim
+account: ruiwenlim
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11753245
+bundleId: 8493831
+url: https://ruiwenlim.shinyapps.io/pics/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
