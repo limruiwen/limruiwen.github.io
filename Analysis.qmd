@@ -57,13 +57,30 @@ plot
 #### Interested to know how roadkill incidents have affected the different reptiles each year? Choose a reptile you're interested to learn more about!
 
 ```{=html}
-<iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp2/"> </iframe>
+<iframe height="500" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp2/"> </iframe>
 ```
 
-### Curious about how these reptiles look? Take a look at the first 5 reptiles recorded in Project Runover:
+#### Looking at the time of year may also paint a picture on the factors affecting reptile roadkill. 
+
+```{r, echo=FALSE, warning=FALSE}
+hss %>%
+  mutate(month = month(Date.of.Encounter)) %>%
+  group_by(Which.of.the.following.groups.best.describes.the.roadkill.found., month) %>%
+  count() %>%
+  ggplot(aes(x = month, y = Which.of.the.following.groups.best.describes.the.roadkill.found., fill = n)) +
+  geom_tile() +
+  labs(x = "Month", y = "Species", fill = "Count") +
+  scale_fill_gradient2(low = "blue", high = "red", mid = "white", midpoint = 25) +
+  theme_bw() +
+  scale_x_continuous(breaks = 1:12, labels = month.abb)
+```
+
+<p> As seen from the heat map, the month with the highest snake roadkill was from May to June. This period is usually the hottest month in Singapore. As such, there may be increased instances of snakes seeking shade beyond forested areas. Other factors such as mating season may affect the number of reptile roadkill found that month. </p>
+
+#### Curious about how some of these reptiles look? Take a look at the first 5 reptiles recorded in Project Runover:
 
 ```{=html}
-<iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/snakeapp/"> </iframe>
+<iframe height="500" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/snakeapp/"> </iframe>
 ```
 
 # Spatial Analysis
@@ -71,7 +88,7 @@ plot
 #### This interactive map allows you to see the locations where reptile roadkill have been spotted. Using the slider on the left, you can select the year(s). The blue circles on the map represent the location of the reptile roadkill. Can you spot any reptile roadkill hotspots?
 
 ```{=html}
-<iframe height="400" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp/"> </iframe>
+<iframe height="500" width="100%" frameborder="no" src="https://ruiwenlim.shinyapps.io/MyShinyApp/"> </iframe>
 ```
 
 <p> Ironically, but not surprisingly, some reptile roadkill hotspots are roads near nature reserves and parks. Nature reserves and sparks are rich habitats for biodiversity. Due the disruption of forest connectivity to build these roads, wildlife often use roads to move from one place to another. When driving in these areas, drive slowly and keep a lookout for any wildlife! </p>
@@ -101,28 +118,32 @@ path_counts %>%
 
 ```
 
-#### As seen by the graph, a very large majority of reptile roadkill are found on roads.
-
-# Month Analysis
-
-#### Looking at the time of year may also paint a picture on the factors affecting reptile roadkill. 
-
-```{r, echo=FALSE, warning=FALSE}
-hss %>%
-  mutate(month = month(Date.of.Encounter)) %>%
-  group_by(Which.of.the.following.groups.best.describes.the.roadkill.found., month) %>%
-  count() %>%
-  ggplot(aes(x = month, y = Which.of.the.following.groups.best.describes.the.roadkill.found., fill = n)) +
-  geom_tile() +
-  labs(x = "Month", y = "Species", fill = "Count") +
-  scale_fill_gradient2(low = "blue", high = "red", mid = "white", midpoint = 25) +
-  theme_bw() +
-  scale_x_continuous(breaks = 1:12, labels = month.abb)
-```
-
-<p> As seen from the heat map, the month with the highest snake roadkill was from May to June. This period is usually the hottest month in Singapore. As such, there may be increased instances of snakes seeking shade beyond forested areas. Other factors such as mating season may affect the number of reptile roadkill found that month. </p>
+#### As seen by the graph, a very large majority of reptile roadkill are found on roads. This emphasises the adverse impacts urbanisation, and more specifically, roads have had on wildlife. 
 
 <p> Through exploring this data, I hope more people are cognisant of the negative impacts urbanisation has had on wildlife. To take action, you can start by contributing to Project Runover if you see any roadkill, driving slowly and staying alert especially at areas near nature reserves, and feedback to governmental institutions about mitigation measures! </p>
 
 <p><strong> TOGETHER, WE CAN STOP REPTILE ROADKILL! </strong></p>
+
+#### References
+<div style="text-indent: -0.5in; padding-left: 0.5in;">
+
+[Banded Malayan Coral Snake—Calliophis intestinalis. (n.d.).](https://www.ecologyasia.com/verts/snakes/banded_malayan_coral_snake.htm) Retrieved 15 April 2024.
+
+[Common wolf snake (Lycodon capucinus). (n.d.).](https://www.thainationalparks.com/species/lycodon-capucinus) Retrieved 15 April 2024.
+
+[Dendrelaphis cyanochloris. (2022, September 19). In Wikipedia.](https://en.wikipedia.org/wiki/Dendrelaphis_cyanochloris)
+
+[Indochinese Rat Snake—Ptyas korros. (n.d.).](https://www.ecologyasia.com/verts/snakes/indo-chinese_rat_snake.htm) Retrieved 15 April 2024.
+
+[Oriental Whipsnake (Snakes of the Philippines) · iNaturalist. (n.d.). iNaturalist.](https://www.inaturalist.org/guide_taxa/1180819) Retrieved 15 April 2024.
+
+</div>
+
+
+
+
+
+
+
+
 

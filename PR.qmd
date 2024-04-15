@@ -17,4 +17,11 @@ title: "Project Runover"
 <iframe width="800" height="550" src="https://herpsocsg.com/" title="Herpetological Society of Singapore"></iframe>
 ```
 
+References
+<div style="text-indent: -0.5in; padding-left: 0.5in;">
+Yee, A. T. K., Corlett, R. T., Liew, S. C., & Tan, H. T. W. (2011). The vegetation of Singapore ―an updated map.
+
+Raja, K. (2021) Project Runover. Herpetological Society of Singapore. https://herpsocsg.com/2021/12/31/project-runover/
+
+
 
