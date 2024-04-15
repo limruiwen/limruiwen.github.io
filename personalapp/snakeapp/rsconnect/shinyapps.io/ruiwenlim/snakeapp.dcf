@@ -1,0 +1,12 @@
+name: snakeapp
+title: snakeapp
+username: ruiwenlim
+account: ruiwenlim
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11756941
+bundleId: 8494046
+url: https://ruiwenlim.shinyapps.io/snakeapp/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

@@ -3,10 +3,10 @@ library(readr)
 library(dplyr)
 library(stringr)
 
-data <- read.csv("Project_RunOver.csv")
+
+data <- read.csv("Project_RunOver2.csv")
 unique_species <- data$If.you.are.able.to.provide.a.more.specific.ID..please.do.so.here. %>%
-  na.omit() %>%
-  unique()
+  na.omit() %>% unique()
 first_five_species <- unique_species[1:5]
 choices <- str_replace_all(setNames(first_five_species, first_five_species), " ", "")
 
